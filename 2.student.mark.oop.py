@@ -1,5 +1,4 @@
 class SchoolEntity:
-    # """Base class demonstrating polymorphism."""
     def input_info(self):
         raise NotImplementedError("Subclasses must implement input_info()")
 
