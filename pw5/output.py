@@ -26,7 +26,6 @@ def student_marks(Marks):
     
 def calc_gpa(student_name, courses, Marks):
 
-    # array for numpy
     marks = []
     credits = []
     
@@ -39,18 +38,13 @@ def calc_gpa(student_name, courses, Marks):
                 marks.append(Marks[course_name][student_name]) # append student's mark
                 credits.append(credit) # student's credit
                 
-    # check if marks = 0
     if len(marks) == 0:
             return 0
         
-    # convert to numpy arrays
     marks = np.array(marks)
     credits = np.array(credits)
     
-    # calculate the GPA (weighted)
-    return np.sum(marks * credits) / np.sum(credits) # gpa = sum of (mark * credit) / sum of credits
-
-# tiny func for ranking gpa func
+    return np.sum(marks * credits) / np.sum(credits) 
 def get_gpa(student, courses, Marks):
     return calc_gpa(student.name, courses, Marks)
 
@@ -58,7 +52,7 @@ def student_ranking_gpa(students, courses, Marks):
     print("=======GPA COMPUTING=======")
     ranked = sorted(
         students, 
-        key = lambda student: get_gpa(student, courses, Marks), # lambda = tiny func: etc(student): return getgpa
+        key = lambda student: get_gpa(student, courses, Marks), 
         reverse = True
     )
     

@@ -1,4 +1,4 @@
-from domains.student import Student # importing class from domains dir/package
+from domains.student import Student 
 from domains.course import Course
 import math
 import csv
@@ -10,7 +10,7 @@ def input_student():
     
     for i in range(total_student):
         name = input("Student name: ")
-        student_id = int(input("Student ID: "))
+        student_id = input("Student ID: ")
         dob = input("DoB: ")
         students.append(Student(name, student_id, dob))
         
